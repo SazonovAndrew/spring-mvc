@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <title>All Cars</title>
+</head>
+<body>
+
+
+
+<div>
+    <h1>Cars Info</h1>
+
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Year</th>
+            <th>Price</th>
+
+
+        </tr>
+        <tr th:each="car : ${carList}"  >
+            <td th:utext="${car.getId()}"></td>
+            <td th:utext="${car.getName()}"></td>
+            <td th:utext="${car.getYearOfCreate()}"></td>
+            <td th:utext="${car.getPrice()}"></td>
+        </tr>
+
+    </table>
+
+</div>
+
+</body>
+</html>
